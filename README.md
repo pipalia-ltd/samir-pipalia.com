@@ -5,6 +5,9 @@ Static personal site for Samir Pipalia, designed for GitHub Pages and AI-readabl
 ## Files
 
 - `index.html` - public website and structured `schema.org` profile data.
+- `sap-business-one-landscape-stabilisation.html` - detailed SAP Business One stabilisation case study.
+- `sap-business-one-fuel-card-integration.html` - detailed SAP Business One fuel card integration case study.
+- `shopify-sap-business-one-integration.html` - detailed Shopify to SAP Business One integration case study.
 - `styles.css` - responsive styling.
 - `llms.txt` - concise AI-readable professional profile.
 - `ai-profile.json` - structured summary for machines and future reuse.
@@ -36,5 +39,6 @@ The public site intentionally excludes phone number and home address. Keep salar
 - Submit `https://samir-pipalia.com/sitemap.xml` after DNS is live.
 - Keep the same name, title, profile summary and headshot across LinkedIn, GitHub and other public profiles.
 - Add analytics only if useful. Privacy-friendly options include Plausible or Microsoft Clarity; update `privacy.html` first.
+- If using GA4, add the Google tag only after choosing the Measurement ID, then update `privacy.html` before publishing.
 - Consider Cloudflare in front of GitHub Pages if you want configurable security headers such as `Content-Security-Policy`, `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy`.
 - Add a fresh case study or short technical note every month or two to create a visible freshness signal.

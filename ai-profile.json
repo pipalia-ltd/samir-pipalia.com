@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "Samir Pipalia",
   "canonicalUrl": "https://samir-pipalia.com/",
   "linkedin": "https://www.linkedin.com/in/pipalia/",
@@ -63,10 +63,10 @@
     "Reduced Crystal Reports load times from over one minute to under five seconds."
   ],
   "caseStudyTopics": [
-    "SAP Business One landscape stabilisation across 38 companies",
-    "SAP Business One fuel card integration for BP and Total acceptance",
+    "SAP Business One landscape stabilisation across 38 companies: https://samir-pipalia.com/sap-business-one-landscape-stabilisation.html",
+    "SAP Business One fuel card integration for BP and Total acceptance: https://samir-pipalia.com/sap-business-one-fuel-card-integration.html",
     "IATA-compliant aviation invoicing using XML and SAP Business One integration",
-    "Shopify to SAP Business One B2B eCommerce order processing"
+    "Shopify to SAP Business One B2B eCommerce order processing: https://samir-pipalia.com/shopify-sap-business-one-integration.html"
   ],
   "additionalProjects": [
     "Google Gemma 2 AI Hackathon: contributed to an AI-powered image recognition shopping prototype in a three-person sprint team.",

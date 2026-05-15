@@ -38,10 +38,10 @@ He has 25+ years' experience delivering and owning complex application landscape
 
 ## Selected Case Study Topics
 
-- SAP Business One landscape stabilisation across 38 companies.
-- SAP Business One fuel card integration for BP and Total acceptance.
+- SAP Business One landscape stabilisation across 38 companies: https://samir-pipalia.com/sap-business-one-landscape-stabilisation.html
+- SAP Business One fuel card integration for BP and Total acceptance: https://samir-pipalia.com/sap-business-one-fuel-card-integration.html
 - IATA-compliant aviation invoicing using XML and SAP Business One integration.
-- Shopify to SAP Business One B2B eCommerce order processing.
+- Shopify to SAP Business One B2B eCommerce order processing: https://samir-pipalia.com/shopify-sap-business-one-integration.html
 
 ## Additional Public Projects
 
