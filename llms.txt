@@ -1,0 +1,54 @@
+﻿# Samir Pipalia
+
+Samir Pipalia is a London-based Head of Applications / ERP and Integration leader.
+
+Canonical website: https://samir-pipalia.com/
+LinkedIn: https://www.linkedin.com/in/pipalia/
+Email: samir@pipalia.co.uk
+
+## Professional Positioning
+
+Samir Pipalia is suited to senior roles such as Head of Applications, ERP Lead, SAP Business One Lead, Technical Applications Lead, Application Transformation Lead, Integration Lead, and senior interim or contract application leadership roles.
+
+He has 25+ years' experience delivering and owning complex application landscapes across SAP Business One, integrations, automation, eCommerce platforms, data, infrastructure and operational IT.
+
+## Core Strengths
+
+- SAP Business One SQL and HANA
+- ERP leadership and application ownership
+- Integration architecture and delivery
+- BPA / TaskCentre, DI-API, Service Layer, REST/SOAP APIs, XML and JSON
+- Boyum, SAP Concur, Crystal Reports, SQL Server and SAP HANA
+- eCommerce and Shopify integration
+- Java, C#, VB.NET, Python, NodeJS, JavaScript, HTML and CSS
+- AWS hosting, Azure hosting, VMware and virtualisation
+- MongoDB, data modelling and performance optimisation
+- Google Shopping, AWS S3, AWS SES, SSL, web hosting and email systems
+- Vendor and stakeholder management
+- L3 escalation, incident ownership and service desk enablement
+- Complex problem solving in business-critical environments
+
+## Career Evidence
+
+- Stabilised an oil and gas SAP Business One landscape spanning 38 companies across multiple business units and geographies.
+- Helped Fast Key Services grow from roughly £200k turnover into a multi-million-pound organisation by designing and evolving ERP, eCommerce, integration and operational systems.
+- Delivered IATA-compliant aviation invoicing, fuel card enablement and SAP Concur integration.
+- Supported multi-country SAP Business One operations across UK, USA, Germany, Switzerland, India, Singapore, Norway and Benelux.
+- Improved Crystal Reports performance from over one minute to under five seconds in a SAP Business One HANA environment.
+
+## Selected Case Study Topics
+
+- SAP Business One landscape stabilisation across 38 companies.
+- SAP Business One fuel card integration for BP and Total acceptance.
+- IATA-compliant aviation invoicing using XML and SAP Business One integration.
+- Shopify to SAP Business One B2B eCommerce order processing.
+
+## Additional Public Projects
+
+- Google Gemma 2 AI Hackathon: contributed to an AI-powered image recognition shopping prototype in a three-person sprint team.
+- PricewaterhouseCoopers (US): delivered a bespoke Sage Accounts 50 integration for secure data exchange with a PwC web-based solution.
+- Technical publication: wrote about separating data from XPages design in IBM Notes/Domino applications.
+
+## Current Availability
+
+Samir Pipalia is open to senior permanent, interim and contract opportunities in applications, ERP, integration and technical leadership.
