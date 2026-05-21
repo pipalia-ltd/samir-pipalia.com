@@ -1,0 +1,105 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+publish_mode: editorial_workflow
+media_folder: public/uploads/blog
+public_folder: /uploads/blog
+
+site_url: https://samir-pipalia.com
+display_url: https://samir-pipalia.com
+logo_url: /assets/favicon.svg
+
+collections:
+  - name: blog
+    label: Blog posts
+    label_singular: Blog post
+    folder: src/content/blog
+    create: true
+    extension: md
+    format: frontmatter
+    path: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}"
+    preview_path: "blog/{{year}}/{{month}}/{{slug}}/"
+    sortable_fields:
+      - publish_at
+      - title
+      - status
+    view_filters:
+      - label: Needs AI metadata
+        field: ai_generated
+        pattern: false
+      - label: Scheduled
+        field: status
+        pattern: scheduled
+      - label: Published
+        field: status
+        pattern: published
+    fields:
+      - label: Post body
+        name: body
+        widget: markdown
+        hint: Paste the LinkedIn-style post here. The automation will generate title, slug, tags, description and excerpt.
+      - label: Publish at
+        name: publish_at
+        widget: datetime
+        default: ""
+        date_format: YYYY-MM-DD
+        time_format: HH:mm
+        picker_utc: false
+        hint: Europe/London time. Future posts stay hidden from the website until this time.
+      - label: Status
+        name: status
+        widget: select
+        default: scheduled
+        options:
+          - draft
+          - scheduled
+          - published
+      - label: Hero image
+        name: hero_image
+        widget: image
+        required: false
+      - label: LinkedIn URL
+        name: linkedin_url
+        widget: string
+        required: false
+      - label: Generated title
+        name: title
+        widget: string
+        required: false
+        hint: Filled by AI after save. You can edit it before the post goes live.
+      - label: Generated slug
+        name: slug
+        widget: string
+        required: false
+      - label: Generated description
+        name: description
+        widget: text
+        required: false
+      - label: Generated excerpt
+        name: excerpt
+        widget: text
+        required: false
+      - label: Generated tags
+        name: tags
+        widget: list
+        required: false
+        field:
+          label: Tag
+          name: tag
+          widget: string
+      - label: Social summary
+        name: social_summary
+        widget: text
+        required: false
+      - label: AI generated
+        name: ai_generated
+        widget: boolean
+        default: false
+        required: false
+      - label: AI generated at
+        name: ai_generated_at
+        widget: datetime
+        required: false

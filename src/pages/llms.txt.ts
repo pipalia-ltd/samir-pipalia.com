@@ -1,4 +1,13 @@
-﻿# Samir Pipalia
+import { site } from "@data/site";
+import { getLivePosts, postTitle, postUrl } from "@lib/posts";
+
+export async function GET() {
+  const posts = await getLivePosts(8);
+  const latestWriting = posts.length > 0
+    ? posts.map((post) => `- ${postTitle(post)}: ${new URL(postUrl(post), site.url).toString()}`).join("\n")
+    : "- Blog archive: https://samir-pipalia.com/blog/";
+
+  const body = `# Samir Pipalia
 
 Samir Pipalia is a London-based Head of Applications / ERP and Integration leader.
 
@@ -22,11 +31,8 @@ He has 25+ years' experience delivering and owning complex application landscape
 - eCommerce and Shopify integration
 - Java, C#, VB.NET, Python, NodeJS, JavaScript, HTML and CSS
 - AWS hosting, Azure hosting, VMware and virtualisation
-- MongoDB, data modelling and performance optimisation
-- Google Shopping, AWS S3, AWS SES, SSL, web hosting and email systems
 - Vendor and stakeholder management
 - L3 escalation, incident ownership and service desk enablement
-- Complex problem solving in business-critical environments
 
 ## Career Evidence
 
@@ -40,15 +46,18 @@ He has 25+ years' experience delivering and owning complex application landscape
 
 - SAP Business One landscape stabilisation across 38 companies: https://samir-pipalia.com/sap-business-one-landscape-stabilisation.html
 - SAP Business One fuel card integration for BP and Total acceptance: https://samir-pipalia.com/sap-business-one-fuel-card-integration.html
-- IATA-compliant aviation invoicing using XML and SAP Business One integration.
 - Shopify to SAP Business One B2B eCommerce order processing: https://samir-pipalia.com/shopify-sap-business-one-integration.html
 
-## Additional Public Projects
+## Latest Writing
 
-- Google Gemma 2 AI Hackathon: contributed to an AI-powered image recognition shopping prototype in a three-person sprint team.
-- PricewaterhouseCoopers (US): delivered a bespoke Sage Accounts 50 integration for secure data exchange with a PwC web-based solution.
-- Technical publication: wrote about separating data from XPages design in IBM Notes/Domino applications.
+${latestWriting}
 
 ## Current Availability
 
 Samir Pipalia is open to senior permanent, interim and contract opportunities in applications, ERP, integration and technical leadership.
+`;
+
+  return new Response(body, {
+    headers: { "Content-Type": "text/plain; charset=utf-8" },
+  });
+}
