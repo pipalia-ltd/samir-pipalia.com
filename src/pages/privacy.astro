@@ -1,0 +1,32 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Privacy | Samir Pipalia" description="Privacy notice for Samir-Pipalia.com." canonical="/privacy.html">
+  <main id="main" class="privacy-main">
+    <p class="eyebrow">Privacy</p>
+    <h1>Privacy notice</h1>
+    <section aria-labelledby="privacy-summary">
+      <h2 id="privacy-summary">Summary</h2>
+      <p>This website is a static personal profile and blog for Samir Pipalia. It does not collect form submissions, run advertising scripts or sell personal data. It uses Google Analytics 4 to understand basic website usage.</p>
+    </section>
+    <section aria-labelledby="privacy-contact">
+      <h2 id="privacy-contact">Contact</h2>
+      <p>If you email Samir, the information you provide will be used to respond to your enquiry. Do not send sensitive personal information unless it is necessary for the conversation.</p>
+    </section>
+    <section aria-labelledby="privacy-hosting">
+      <h2 id="privacy-hosting">Hosting, CMS and analytics</h2>
+      <p>The public site is built as a static Astro site and hosted on GitHub Pages. Server logs may be processed by the hosting provider for security, reliability and abuse prevention.</p>
+      <p>Decap CMS uses Netlify Identity and Git Gateway for administrator login. This is only used for content management access to the private admin interface.</p>
+      <p>Google Analytics 4 is configured with measurement ID G-Y8RDGFG5N3. Analytics data may include pages viewed, approximate location, device and browser information, referral source and interaction timing.</p>
+    </section>
+    <section aria-labelledby="privacy-ai">
+      <h2 id="privacy-ai">AI-assisted publishing</h2>
+      <p>Blog metadata such as titles, descriptions, excerpts, tags and slugs may be generated from draft post content using OpenAI through GitHub Actions. Only content intended for publication should be entered into the CMS.</p>
+    </section>
+    <section aria-labelledby="privacy-links">
+      <h2 id="privacy-links">External links</h2>
+      <p>The site links to LinkedIn and may link to other professional profiles. Those services have their own privacy practices.</p>
+    </section>
+  </main>
+</BaseLayout>

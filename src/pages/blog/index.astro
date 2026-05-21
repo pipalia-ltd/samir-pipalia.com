@@ -1,0 +1,48 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { site } from "@data/site";
+import { formatPostDate, getLivePosts, postTitle, postUrl } from "@lib/posts";
+
+const posts = await getLivePosts();
+---
+
+<BaseLayout
+  title={`Blog | ${site.name}`}
+  description="Notes from Samir Pipalia on SAP Business One, ERP ownership, integration, support maturity and application leadership."
+  canonical="/blog/"
+>
+  <main id="main">
+    <section class="blog-hero" aria-labelledby="blog-title">
+      <p class="eyebrow">Blog</p>
+      <h1 id="blog-title">Practical notes on ERP, integrations and application leadership.</h1>
+      <p>Thoughts from the workbench: lessons from SAP Business One, integration projects, support challenges and the everyday work of making business systems easier to trust.</p>
+    </section>
+    <section class="section" aria-label="Blog posts">
+      <div class="post-list">
+        {
+          posts.length > 0 ? (
+            posts.map((post) => (
+              <article class="post-card">
+                <div class="post-meta">
+                  <time datetime={post.data.publish_at.toISOString()}>{formatPostDate(post.data.publish_at)}</time>
+                </div>
+                <h2><a href={postUrl(post)}>{postTitle(post)}</a></h2>
+                <p>{post.data.excerpt || post.data.description}</p>
+                {post.data.tags.length > 0 && (
+                  <div class="tag-list" aria-label="Tags">
+                    {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+                  </div>
+                )}
+              </article>
+            ))
+          ) : (
+            <article class="post-card">
+              <h2>Writing starts here</h2>
+              <p>Scheduled posts will appear here automatically once their publish time arrives.</p>
+            </article>
+          )
+        }
+      </div>
+    </section>
+  </main>
+</BaseLayout>

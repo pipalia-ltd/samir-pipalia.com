@@ -4,3 +4,7 @@ Thumbs.db
 *.tmp
 *.bak
 screenshot-*.png
+node_modules/
+dist/
+.astro/
+inbox/

@@ -1,0 +1,79 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { site } from "@data/site";
+
+interface Props {
+  title: string;
+  pageTitle: string;
+  description: string;
+  eyebrow: string;
+  summary: string;
+  problem: string;
+  solution: string;
+  outcome: string;
+  context: string;
+  owned: string[];
+  searches: string;
+  canonical: string;
+}
+
+const props = Astro.props;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: props.title,
+  description: props.description,
+  datePublished: "2026-05-15",
+  dateModified: "2026-05-18",
+  author: {
+    "@type": "Person",
+    name: site.name,
+    url: site.url,
+  },
+  mainEntityOfPage: new URL(props.canonical, site.url).toString(),
+};
+---
+
+<BaseLayout
+  title={`${props.title} | ${site.name}`}
+  description={props.description}
+  canonical={props.canonical}
+  ogType="article"
+  structuredData={structuredData}
+>
+  <main id="main" class="case-detail">
+    <header>
+      <p class="eyebrow">{props.eyebrow}</p>
+      <h1>{props.pageTitle}</h1>
+      <p class="case-summary">{props.summary}</p>
+    </header>
+    <div class="detail-grid" aria-label="Case study summary">
+      <article>
+        <h2>Problem</h2>
+        <p>{props.problem}</p>
+      </article>
+      <article>
+        <h2>Solution</h2>
+        <p>{props.solution}</p>
+      </article>
+      <article>
+        <h2>Outcome</h2>
+        <p>{props.outcome}</p>
+      </article>
+    </div>
+    <section aria-labelledby="context-title">
+      <h2 id="context-title">Context</h2>
+      <p>{props.context}</p>
+    </section>
+    <section aria-labelledby="work-title">
+      <h2 id="work-title">What Samir owned</h2>
+      <ul>
+        {props.owned.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+    <section aria-labelledby="search-title">
+      <h2 id="search-title">Relevant searches this page answers</h2>
+      <p>{props.searches}</p>
+    </section>
+  </main>
+</BaseLayout>

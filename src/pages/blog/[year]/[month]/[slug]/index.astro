@@ -1,0 +1,72 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { site } from "@data/site";
+import { formatPostDate, isPostLive, postSlug, postTitle, postUrl } from "@lib/posts";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.filter((post) => isPostLive(post)).map((post) => {
+    const date = post.data.publish_at;
+    return {
+      params: {
+        year: String(date.getUTCFullYear()),
+        month: String(date.getUTCMonth() + 1).padStart(2, "0"),
+        slug: postSlug(post),
+      },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props as { post: CollectionEntry<"blog"> };
+const { Content } = await post.render();
+const title = postTitle(post);
+const description = post.data.description || post.data.excerpt || `A blog post by ${site.name}.`;
+const canonical = postUrl(post);
+const image = post.data.hero_image || site.ogImage;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: post.data.publish_at.toISOString(),
+  dateModified: post.data.ai_generated_at?.toISOString() || post.data.publish_at.toISOString(),
+  author: {
+    "@type": "Person",
+    name: site.name,
+    url: site.url,
+  },
+  image: new URL(image, site.url).toString(),
+  mainEntityOfPage: new URL(canonical, site.url).toString(),
+  keywords: post.data.tags.join(", "),
+};
+---
+
+<BaseLayout title={`${title} | ${site.name}`} description={description} canonical={canonical} image={image} ogType="article" structuredData={structuredData}>
+  <main id="main" class="article-main">
+    <article>
+      <header class="article-header">
+        <p class="eyebrow">Blog</p>
+        <h1>{title}</h1>
+        <div class="post-meta">
+          <time datetime={post.data.publish_at.toISOString()}>{formatPostDate(post.data.publish_at)}</time>
+          {post.data.linkedin_url && <a href={post.data.linkedin_url} target="_blank" rel="noopener noreferrer">LinkedIn source</a>}
+        </div>
+        {post.data.excerpt && <p class="article-summary">{post.data.excerpt}</p>}
+        {post.data.tags.length > 0 && (
+          <div class="tag-list" aria-label="Tags">
+            {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        )}
+        {post.data.hero_image && <img class="article-image" src={post.data.hero_image} alt="" loading="eager" decoding="async" />}
+      </header>
+      <div class="article-body">
+        <Content />
+      </div>
+      <footer class="article-footer">
+        <a class="text-link" href="/blog/">Back to all writing</a>
+      </footer>
+    </article>
+  </main>
+</BaseLayout>
